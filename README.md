@@ -74,17 +74,42 @@ Ela oferece gerenciamento completo de sensores, estações, leituras, alertas e 
 
 ---
 
-## 📡 Endpoints Principais
+## 📑 Endpoints Principais
 
-| Entidade | Endpoint               | Método | Descrição                      |
-| -------- | ---------------------- | ------ | ----------------------------- |
-| Sensor   | `/api/sensor`          | GET    | Lista todos os sensores        |
-| Sensor   | `/api/sensor/paginado` | GET    | Lista sensores com paginação  |
-| Sensor   | `/api/sensor/{id}`     | GET    | Busca sensor por ID           |
-| Sensor   | `/api/sensor`          | POST   | Cria um novo sensor           |
-| Sensor   | `/api/sensor/{id}`     | PUT    | Atualiza sensor existente     |
-| Sensor   | `/api/sensor/{id}`     | DELETE | Remove sensor                 |
-| ...      |                        |        | *(outros endpoints CRUD seguem padrão similar)* |
+### 📍 Estações (`/api/Estacao`)
+- `POST` Criar
+- `GET` Listar com paginação
+- `GET /{id}` Buscar por ID
+- `PUT /{id}` Atualizar
+- `DELETE /{id}` Deletar
+
+### 📍 Sensores (`/api/Sensor`)
+- `POST` Criar
+- `GET` Listar com paginação
+- `GET /{id}` Buscar por ID
+- `PUT /{id}` Atualizar
+- `DELETE /{id}` Deletar
+
+### 📍 Leituras (`/api/Leitura`)
+- `POST` Criar
+- `GET` Listar com paginação
+- `GET /{id}` Buscar por ID
+- `PUT /{id}` Atualizar
+- `DELETE /{id}` Deletar
+
+### 📍 Leituras (`/api/Risco`)
+- `POST` Criar
+- `GET` Listar com paginação
+- `GET /{id}` Buscar por ID
+- `PUT /{id}` Atualizar
+- `DELETE /{id}` Deletar
+
+### 📍 Leituras (`/api/Sensor`)
+- `POST` Criar
+- `GET` Listar com paginação
+- `GET /{id}` Buscar por ID
+- `PUT /{id}` Atualizar
+- `DELETE /{id}` Deletar
 
 ---
 
