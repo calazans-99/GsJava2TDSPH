@@ -1,38 +1,54 @@
-
 package br.com.fiap.safeguard.controller;
 
 import br.com.fiap.safeguard.dto.LoginRequestDTO;
 import br.com.fiap.safeguard.dto.TokenResponseDTO;
-import br.com.fiap.safeguard.model.Usuario;
-import br.com.fiap.safeguard.service.JwtService;
-import br.com.fiap.safeguard.service.UsuarioService;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
+
+import java.nio.charset.StandardCharsets;
+import java.security.Key;
+import java.util.Date;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+    private final AuthenticationManager authenticationManager;
 
-    @Autowired
-    private JwtService jwtService;
+    @Value("${jwt.secret}")
+    private String secret;
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginRequestDTO request) {
-        Usuario user = new Usuario(request.getUsername(), request.getPassword());
-        if (usuarioService.autenticar(user)) {
-            String token = jwtService.generateToken(user.getUsername());
-            return ResponseEntity.ok(new TokenResponseDTO(token));
-        } else {
-            return ResponseEntity.status(401).body("Usuário ou senha inválidos");
-        }
+    public AuthController(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
     }
 
-    @GetMapping("/teste")
-    public ResponseEntity<String> teste() {
-        return ResponseEntity.ok("Acesso autorizado com JWT!");
+    @PostMapping("/login")
+    public ResponseEntity<TokenResponseDTO> login(@RequestBody @Valid LoginRequestDTO loginRequest) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
+        );
+
+        Key key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+
+        String jwt = Jwts.builder()
+                .setSubject(authentication.getName())
+                .claim("roles", authentication.getAuthorities().stream()
+                        .map(auth -> auth.getAuthority())
+                        .collect(Collectors.toList()))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 1 dia
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+
+        return ResponseEntity.ok(new TokenResponseDTO(jwt));
     }
 }
