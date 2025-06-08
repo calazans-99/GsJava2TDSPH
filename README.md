@@ -111,7 +111,7 @@ http://localhost:8080/swagger-ui.html
 |---------------------------------|---------|
 | Marcus Vinicius de Souza Calazans | 556620 |
 | Felipe Nogueira Ramon            | 555335 |
-| Fernando Hitoshi Hirosima        | 556730 |
+| Fernando Hitoshi Hirasima        | 558730 |
 
 ---
 
