@@ -1,11 +1,14 @@
 package br.com.fiap.safeguard.dto;
 
+import java.time.LocalDateTime;
+
 public class RiscoDTO {
 
     private Long id;
     private String tipo;
     private String descricao;
     private Double valor;
+    private LocalDateTime dataHora;
 
     public RiscoDTO() {}
 
@@ -39,5 +42,13 @@ public class RiscoDTO {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 }

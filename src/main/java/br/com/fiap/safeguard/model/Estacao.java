@@ -41,6 +41,9 @@ public class Estacao {
     @Column(name = "LONGITUDE", nullable = false)
     private Double longitude;
 
+    @Column(name = "LOCALIZACAO", length = 255)
+    private String localizacao;
+
     public Estacao() {}
 
     public Long getId() {
@@ -89,5 +92,13 @@ public class Estacao {
 
     public void setLongitude(Double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
     }
 }

@@ -1,15 +1,10 @@
 package br.com.fiap.safeguard.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
-import jakarta.persistence.Column;
-
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "TB_RISCO")
@@ -33,7 +28,15 @@ public class Risco {
     @Column(name = "VALOR", nullable = false)
     private Double valor;
 
+    @Column(name = "DATA_HORA")
+    private LocalDateTime dataHora;
+
     public Risco() {}
+
+    @PrePersist
+    protected void onCreate() {
+        this.dataHora = LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
@@ -65,5 +68,13 @@ public class Risco {
 
     public void setValor(Double valor) {
         this.valor = valor;
+    }
+
+    public LocalDateTime getDataHora() {
+        return dataHora;
+    }
+
+    public void setDataHora(LocalDateTime dataHora) {
+        this.dataHora = dataHora;
     }
 }

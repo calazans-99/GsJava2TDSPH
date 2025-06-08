@@ -7,6 +7,7 @@ public class SensorDTO {
     private String unidade;
     private Double valorMinimo;
     private Double valorMaximo;
+    private String descricao;
 
     public SensorDTO() {}
 
@@ -48,5 +49,13 @@ public class SensorDTO {
 
     public void setValorMaximo(Double valorMaximo) {
         this.valorMaximo = valorMaximo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

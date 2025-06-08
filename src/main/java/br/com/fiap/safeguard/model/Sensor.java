@@ -37,6 +37,9 @@ public class Sensor {
     @Column(name = "VALOR_MAXIMO", nullable = false)
     private Double valorMaximo;
 
+    @Column(name = "DESCRICAO", length = 255)
+    private String descricao;
+
     public Sensor() {}
 
     public Long getId() {
@@ -77,5 +80,13 @@ public class Sensor {
 
     public void setValorMaximo(Double valorMaximo) {
         this.valorMaximo = valorMaximo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }

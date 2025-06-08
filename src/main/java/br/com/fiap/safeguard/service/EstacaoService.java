@@ -35,9 +35,14 @@ public class EstacaoService {
     public Estacao atualizar(Long id, Estacao objAtualizado) {
         Estacao estacaoExistente = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Estação não encontrada"));
+
         estacaoExistente.setNome(objAtualizado.getNome());
+        estacaoExistente.setCidade(objAtualizado.getCidade());
+        estacaoExistente.setUf(objAtualizado.getUf());
         estacaoExistente.setLatitude(objAtualizado.getLatitude());
         estacaoExistente.setLongitude(objAtualizado.getLongitude());
+        estacaoExistente.setLocalizacao(objAtualizado.getLocalizacao());
+
         return repository.save(estacaoExistente);
     }
 

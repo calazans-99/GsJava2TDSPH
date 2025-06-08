@@ -35,10 +35,13 @@ public class SensorService {
     public Sensor atualizar(Long id, Sensor objAtualizado) {
         Sensor sensorExistente = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Sensor não encontrado"));
+
         sensorExistente.setTipo(objAtualizado.getTipo());
         sensorExistente.setUnidade(objAtualizado.getUnidade());
         sensorExistente.setValorMinimo(objAtualizado.getValorMinimo());
         sensorExistente.setValorMaximo(objAtualizado.getValorMaximo());
+        sensorExistente.setDescricao(objAtualizado.getDescricao());
+
         return repository.save(sensorExistente);
     }
 

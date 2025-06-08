@@ -1,6 +1,7 @@
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\dto\AlertaDTO.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\config\CorsConfig.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\dto\RiscoDTO.java
+C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\service\InMemoryUserDetailsService.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\config\JwtAuthFilter.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\model\Estacao.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\model\Risco.java
@@ -12,7 +13,6 @@ C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\dto\Estacao
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\service\LeituraService.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\config\ModelMapperConfig.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\repository\AlertaRepository.java
-C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\config\SwaggerConfig.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\controller\LeituraController.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\dto\LoginRequestDTO.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\exception\GlobalExceptionHandler.java
@@ -26,11 +26,10 @@ C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\config\Secu
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\dto\LeituraDTO.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\model\Alerta.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\dto\SensorDTO.java
-C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\model\Usuario.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\controller\AlertaController.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\service\JwtService.java
+C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\config\OpenApiConfig.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\service\RiscoService.java
-C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\service\UsuarioService.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\controller\AuthController.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\model\Sensor.java
 C:\Users\fox\Downloads\SAFE.Core\src\main\java\br\com\fiap\safeguard\repository\SensorRepository.java
