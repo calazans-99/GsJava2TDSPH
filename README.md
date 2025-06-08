@@ -90,7 +90,7 @@ git clone https://github.com/calazans-99/GsJava2TDSPH.git
 
 2. Navegue até a pasta do projeto:
 ```bash
-cd SAFE.Core
+cd safeguard
 ```
 
 3. Execute a aplicação com Maven:
